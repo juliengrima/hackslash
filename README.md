@@ -29,7 +29,19 @@ A Unity project created on August 5, 2023, 15:17 pm.
     	1. ^$ git clone https://github.com/juliengrima/hackslash.git
         2. Ouvrir UNityHub et cliquer sur Open
         3. Selectionner le répetoire du clone et valider
-        4. Cliquer sur le nouveau projet apparue dans UnityHub 	
+        4. Cliquer sur le nouveau projet apparue dans UnityHub pour l'ouvrir dans Unity3D
+        ---------------------------------------------------
+        Pour les utilisateurs de Visual Studio Code Windows
+        ---------------------------------------------------
+        5. Ouvrir le packageManager et selectionner UnityRegistry
+        6. Chercher Visual Studio Code Editor et Update
+        (Attention pour les utilisateurs de MacOs, une fonction est générée pour l'utilisattion sous Windows)
+            Une erreur peu s'afficher)
+        -------------------------------------------------
+        Pour les utilisateurs de Visual Studio 202X
+        -------------------------------------------------
+        5. Ouvrir le packageManager et selectionner UnityRegistry
+        6. Chercher Visual Studio Code Editor et Delete
 
 ## Lors de la création d'une nouvelle Scene:
     Seul la Branche LevDesign peut servir a créer de nouvelles scènes.

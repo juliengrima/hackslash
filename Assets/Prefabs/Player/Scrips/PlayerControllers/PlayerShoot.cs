@@ -8,8 +8,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] InputActionReference _shoot;
     [SerializeField] CursorPosition _aimCursor; // AIM CURSOR POINT
     [SerializeField] float _fireRate; 
-    [SerializeField] BulletDirection _bd;
-    [SerializeField] Transform _spawnPoint;
+    [SerializeField] BulletDirection _bulletDirection;
+    [SerializeField] Transform _bullet;
 
     Coroutine ShootRoutine { get; set; }
 
@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
             var waiter = new WaitForSeconds(_fireRate);
             while (true)
             {
-                Instantiate(_bd, _spawnPoint.position, Quaternion.identity).SetDirection(_aimCursor);
+                Instantiate(_bulletDirection, _bullet.position, Quaternion.identity).SetDirection(_aimCursor);
                 yield return waiter;
             }
         }   
