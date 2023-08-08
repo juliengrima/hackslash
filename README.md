@@ -1,9 +1,9 @@
-# auditorium
+# Hack&Slash
 
-AUDITORIUM
+HACK&SLASH
 =======================
 
-A Unity project created on July 25, 2023, 10:17 pm.
+A Unity project created on August 5, 2023, 15:17 pm.
 
 ```
 .-------------------------------------------------------------------------------.  
@@ -25,19 +25,17 @@ A Unity project created on July 25, 2023, 10:17 pm.
     
      - _**Installation :**_
      Ouvrez un terminal, déplacez-vous dans le dossier où vous souhaitez cloner le projet et copiez les lignes de code suivantes
-      !! Assurez vous d'avoir paramètré une version récente de GIT et COMPOSER !! :
-    	1. ^$ 
-
-    	      
-    	
+      !! Assurez vous d'avoir paramètré une version récente de GIT !! :
+    	1. ^$ git clone https://github.com/juliengrima/hackslash.git
+        2. Ouvrir UNityHub et cliquer sur Open
+        3. Selectionner le répetoire du clone et valider
+        4. Cliquer sur le nouveau projet apparue dans UnityHub 	
 
 ## Lors de la création d'une nouvelle Scene:
-
-
-
-
-   
-    
+    Seul la Branche LevDesign peut servir a créer de nouvelles scènes.
+    La Branche Fork est la Branche de référence pour les modifications et ajouts
+    de nouveaux GameObjects.
+    Le GitIgnore de la Branche Fork ignore le répertoire /Assets/Scenes/
 
 
 Le Bundle est activé 
@@ -71,6 +69,5 @@ Le Bundle est activé
                                     \~\ 
                                      ~~ 
 ```
-# Auditorium
 # projetdegroupe
 # hackslash
