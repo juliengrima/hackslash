@@ -169,6 +169,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.ide.vscode": {
+      "version": "https://github.com/SwaonD/VSCodePackage.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d935504eba9c0c2c55e6ba6f559f5f402d4e7f37"
+    },
     "com.unity.inputsystem": {
       "version": "1.6.3",
       "depth": 0,
