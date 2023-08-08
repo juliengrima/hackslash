@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# GIT LINES FILTER BASH PROGRAM
+# to ignore a certain line :
+# put this into .gitattributes : path/to/your/file filter=remove-line
+# then add a new line to this programm with your condition and your sed command
+
+
 file="$1"
-# use file to sed one time (solve pb that only the first sed were executed)
+# file sent from git (implemented to solve the issue that only the first sed were executed)
 
 if [[ "$file" == "Packages/manifest.json" ]]; then
 	sed '/^\s*"com\.unity\.ide\.vscode": "https:\/\/github\.com\/SwaonD\/VSCodePackage\.git",\s*$/d'
