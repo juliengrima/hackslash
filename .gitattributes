@@ -1,1 +1,1 @@
-[Pp]ackages/manifest.json "com.unity.ide.vscode" linguistique
+Packages/manifest.json filter=remove-line
