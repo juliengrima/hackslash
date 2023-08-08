@@ -4,6 +4,8 @@
 # to ignore a certain line :
 # put this into .gitattributes : path/to/your/file filter=remove-line
 # then add a new line to this programm with your condition and your sed command
+# IMPORTANT : To try if it work clear cache and readd the file,
+# then check if the line is added or not
 
 
 file="$1"
