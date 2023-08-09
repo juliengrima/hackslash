@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] InputActionReference _shoot;
     [SerializeField] CursorPosition _aimCursor; // AIM CURSOR POINT
-    [SerializeField] float _fireRate; 
+    [SerializeField] float _fireRate;
     [SerializeField] BulletDirection _bulletDirection;
     [SerializeField] Transform _bullet;
 
@@ -31,7 +31,7 @@ public class PlayerShoot : MonoBehaviour
                 Instantiate(_bulletDirection, _bullet.position, Quaternion.identity).SetDirection(_aimCursor);
                 yield return waiter;
             }
-        }   
+        }
     }
 
     private void ShootStop(InputAction.CallbackContext obj)
@@ -39,5 +39,5 @@ public class PlayerShoot : MonoBehaviour
         if (ShootRoutine == null) return;
         StopCoroutine(ShootRoutine);
         ShootRoutine = null;
-    } 
+    }
 }
