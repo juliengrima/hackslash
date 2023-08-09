@@ -8,10 +8,10 @@ using UnityEngine;
 // Component used to store multiple tags
 public class TagManager : MonoBehaviour
 {
-	[SerializeField, Tag] string[]				_tags;
+	[SerializeField, Tag] string[] _tags;
 
 	[Header("Search")]
-	[SerializeField, Tag] string				_tag;
+	[SerializeField, Tag] string _tag;
 	[SerializeField, ReadOnly] List<GameObject>	_result;
 	[Button("Search")]
 	void	SearchButton() => SearchObjectsWithTags(_tag);
