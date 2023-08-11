@@ -7,23 +7,32 @@ public class Weapon : MonoBehaviour
     #region Champs
     // Ajoutez d'autres attributs spécifiques de l'arme ici
     [Header("Fields")]
-    [SerializeField] private int weaponIndex; // Index de l'arme
-    [SerializeField] private int maxAmmo; // Nombre maximum de munitions
+    [SerializeField] private int _weaponIndex; // Index de l'arme
+    [SerializeField] private int _maxAmmo; // Nombre maximum de munitions
 
     private int currentAmmo; // Munitions actuelles
 
+    public int GetWeaponIndex()
+    {
+        return _weaponIndex;
+    }
+
     #endregion
     #region Unity LifeCycle
+    private void Reset()
+    {
+        _maxAmmo = 100;
+    }
     // Start is called before the first frame update
     private void Start()
     {
-        currentAmmo = maxAmmo; // Commencez avec le nombre maximum de munitions
+        currentAmmo = _maxAmmo; // Commencez avec le nombre maximum de munitions
     }
     #endregion
     #region Methods
     public int GetWeaponIndex()
     {
-        return weaponIndex;
+        return _weaponIndex;
     }
 
     public int GetCurrentAmmo()
@@ -41,7 +50,7 @@ public class Weapon : MonoBehaviour
 
     public void ReloadAmmo()
     {
-        currentAmmo = maxAmmo; // Rechargez les munitions
+        currentAmmo = _maxAmmo; // Rechargez les munitions
     }
     #endregion
     #region Coroutines
