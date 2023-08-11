@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void ReloadAmmo()
+    public void ReloadAmmo(int _maxAmmo)
     {
         currentAmmo = _maxAmmo; // Rechargez les munitions
     }
