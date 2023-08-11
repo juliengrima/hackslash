@@ -12,10 +12,7 @@ public class Weapon : MonoBehaviour
 
     private int currentAmmo; // Munitions actuelles
 
-    public int GetWeaponIndex()
-    {
-        return _weaponIndex;
-    }
+    public int WeaponIndex { get => _weaponIndex; set => _weaponIndex = value; }
 
     #endregion
     #region Unity LifeCycle
@@ -32,7 +29,7 @@ public class Weapon : MonoBehaviour
     #region Methods
     public int GetWeaponIndex()
     {
-        return _weaponIndex;
+        return WeaponIndex;
     }
 
     public int GetCurrentAmmo()
