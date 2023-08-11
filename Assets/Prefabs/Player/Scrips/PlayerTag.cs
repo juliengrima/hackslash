@@ -38,7 +38,6 @@ public class PlayerTag : MonoBehaviour
     #endregion
     #region Methods
     void FixedUpdate (){
-        
     }
     void LateUpdate (){
         

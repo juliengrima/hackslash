@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShoot : MonoBehaviour
+public class WeaponShoot : MonoBehaviour
 {
+    #region Champs
+    [Header("Objects")]
     [SerializeField] InputActionReference _shoot;
     [SerializeField] CursorPosition _aimCursor; // AIM CURSOR POINT
+    [SerializeField] BulletDirection _bulletPrefab;
+    [SerializeField] Transform _bulletSpawner;
+    [Header("Fields")]
     [SerializeField] float _fireRate;
-    [SerializeField] BulletDirection _bulletDirection;
-    [SerializeField] Transform _bullet;
 
+    public Weapon weapon; // Référence au script Weapon
     Coroutine ShootRoutine { get; set; }
-
+    #endregion
+    #region Unity LifeCycle
     private void Start()
     {
         _shoot.action.started += ShootStart;
         _shoot.action.canceled += ShootStop;
     }
-
+    #endregion
+    #region Methods
     private void ShootStart(InputAction.CallbackContext obj)
     {
         if (ShootRoutine != null) return;
@@ -28,7 +34,11 @@ public class PlayerShoot : MonoBehaviour
             var waiter = new WaitForSeconds(_fireRate);
             while (true)
             {
-                Instantiate(_bulletDirection, _bullet.position, Quaternion.identity).SetDirection(_aimCursor);
+                if(weapon.GetCurrentAmmo() > 0) // Vérifier s'il y a des munitions
+                {
+                    Instantiate(_bulletPrefab, _bulletSpawner.position, Quaternion.identity).SetDirection(_aimCursor);
+                    weapon.UseAmmo(); // Déduire une munition
+                }
                 yield return waiter;
             }
         }
@@ -40,4 +50,6 @@ public class PlayerShoot : MonoBehaviour
         StopCoroutine(ShootRoutine);
         ShootRoutine = null;
     }
+
+    #endregion
 }
