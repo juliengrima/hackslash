@@ -5,8 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController_Mouse : MonoBehaviour
 {
+    [Header("Inputs")]
+    [SerializeField] InputActionReference _mouseWheel;
     [SerializeField] InputActionReference _look;
     [SerializeField] Rigidbody2D _rb; // Appel du RigidBody du GameObject
+    [SerializeField] Component _inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +32,9 @@ public class PlayerController_Mouse : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         // Appliquer la rotation au RigidBody
         _rb.MoveRotation(rotation);
+
+        Vector2 selection = _mouseWheel.action.ReadValue<Vector2>();
+        // voir comment selectionner dans la liste weapon
+        
     }
 }

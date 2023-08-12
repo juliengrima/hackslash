@@ -1,5 +1,5 @@
 {
-    "name": "Controls",
+    "name": "PlayerControllers",
     "maps": [
         {
             "name": "PlayerGame",
@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": " inventory",
+                    "type": "Value",
+                    "id": "a5b6a508-dd93-4158-b77a-ab5902ad9d92",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -185,6 +194,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed015ae4-8ffa-412c-b912-dd8472d215b2",
+                    "path": "<Mouse>/forwardButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": " inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "409f23e7-c9fd-48d6-9c08-ca3739b9162a",
+                    "path": "<Mouse>/backButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": " inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
