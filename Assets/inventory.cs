@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class inventory : MonoBehaviour
 {
     #region Champs
+    
+    [Header("Lists")]
     [SerializeField] List<Weapon> weapons = new List<Weapon>(); // Liste d'armes
     [SerializeField] List<Key> keys = new List<Key>(); // Liste de clés
 
@@ -15,6 +17,10 @@ public class inventory : MonoBehaviour
     #endregion
     #region Unity LifeCycle
     // Start is called before the first frame update
+    private void Update()
+    {
+       
+    }
     #endregion
     #region Methods
     public void AddWeapon(Weapon weapon)
