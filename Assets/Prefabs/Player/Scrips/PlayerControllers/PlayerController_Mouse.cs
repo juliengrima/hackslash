@@ -9,7 +9,9 @@ public class PlayerController_Mouse : MonoBehaviour
     [SerializeField] InputActionReference _mouseWheel;
     [SerializeField] InputActionReference _look;
     [SerializeField] Rigidbody2D _rb; // Appel du RigidBody du GameObject
-    [SerializeField] Component _inventory;
+    [SerializeField] Inventory _inventory; // Référence au script Inventory
+
+    private int selectedWeaponIndex = 0; // Index de l'arme sélectionnée
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +35,28 @@ public class PlayerController_Mouse : MonoBehaviour
         // Appliquer la rotation au RigidBody
         _rb.MoveRotation(rotation);
 
+
         Vector2 selection = _mouseWheel.action.ReadValue<Vector2>();
-        // voir comment selectionner dans la liste weapon
-        
+        // Gérer le changement d'arme en fonction du défilement de la molette
+        if (selection.y > 0)
+        {
+            selectedWeaponIndex++;
+            if (selectedWeaponIndex >= _inventory.Weapons.Count)
+            {
+                selectedWeaponIndex = 0;
+            }
+        }
+        else if (selection.y < 0)
+        {
+            selectedWeaponIndex--;
+            if (selectedWeaponIndex < 0)
+            {
+                selectedWeaponIndex = _inventory.Weapons.Count - 1;
+            }
+        }
+
+        // Mettre à jour l'arme actuellement sélectionnée dans l'inventaire
+        _inventory.SelectedWeaponIndex = selectedWeaponIndex;
+
     }
 }
