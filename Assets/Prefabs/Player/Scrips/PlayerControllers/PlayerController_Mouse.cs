@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +15,21 @@ public class PlayerController_Mouse : MonoBehaviour
     private int selectedWeaponIndex = 0; // Index de l'arme sélectionnée
 
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
         
-    }
+    //}
 
     // Update is called once per frame
     void Update()
     {
+        MouseLook();
+        GetNextWeapon();
+    }
+
+    private void MouseLook()
+    {
+        //throw new NotImplementedException();
         Vector2 direction = _look.action.ReadValue<Vector2>();
         // Récupérer la position de la souris dans l'espace de jeu
         direction = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -34,8 +42,11 @@ public class PlayerController_Mouse : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         // Appliquer la rotation au RigidBody
         _rb.MoveRotation(rotation);
+    }
 
-
+    private void GetNextWeapon()
+    {
+        //throw new NotImplementedException();
         Vector2 selection = _mouseWheel.action.ReadValue<Vector2>();
         // Gérer le changement d'arme en fonction du défilement de la molette
         if (selection.y > 0)
@@ -57,6 +68,5 @@ public class PlayerController_Mouse : MonoBehaviour
 
         // Mettre à jour l'arme actuellement sélectionnée dans l'inventaire
         _inventory.SelectedWeaponIndex = selectedWeaponIndex;
-
     }
 }
