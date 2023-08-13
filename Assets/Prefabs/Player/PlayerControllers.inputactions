@@ -218,6 +218,28 @@
                     "action": " inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "211e1412-179f-4fad-9774-a33bcd101e47",
+                    "path": "<Keyboard>/#(-)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": " inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f9b8dd1-e1a3-487e-a97d-15288f3b8ef7",
+                    "path": "<Keyboard>/#(=)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": " inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

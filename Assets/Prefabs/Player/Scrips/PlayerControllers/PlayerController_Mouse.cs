@@ -8,16 +8,19 @@ public class PlayerController_Mouse : MonoBehaviour
 {
     [Header("Inputs")]
     [SerializeField] InputActionReference _mouseWheel;
+    [SerializeField] InputActionReference _keys;
     [SerializeField] InputActionReference _look;
+    [Header("Componenents")]
     [SerializeField] Rigidbody2D _rb; // Appel du RigidBody du GameObject
     [SerializeField] Inventory _inventory; // Référence au script Inventory
+    [SerializeField] GameObject _player;
 
     private int selectedWeaponIndex = 0; // Index de l'arme sélectionnée
-
+    //bool _isButtonPressed = _keys.action.IsPressed();
     // Start is called before the first frame update
     //void Start()
     //{
-        
+
     //}
 
     // Update is called once per frame
@@ -55,6 +58,7 @@ public class PlayerController_Mouse : MonoBehaviour
             if (selectedWeaponIndex >= _inventory.Weapons.Count)
             {
                 selectedWeaponIndex = 0;
+                _player.transform.SetParent(transform);
             }
         }
         else if (selection.y < 0)
@@ -63,6 +67,7 @@ public class PlayerController_Mouse : MonoBehaviour
             if (selectedWeaponIndex < 0)
             {
                 selectedWeaponIndex = _inventory.Weapons.Count - 1;
+                _player.transform.SetParent(transform);
             }
         }
 
