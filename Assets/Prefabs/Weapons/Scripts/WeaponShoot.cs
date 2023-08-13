@@ -30,7 +30,7 @@ public class WeaponShoot : MonoBehaviour
         {
             if (weaponIndex == index.WeaponIndex)
             {
-
+                //throw new NotImplementedException();
             }
         }
 
