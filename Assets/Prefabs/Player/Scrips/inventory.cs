@@ -38,17 +38,21 @@ public class Inventory : MonoBehaviour
         {
             Weapons.Add(weapon);
         }
+        else
+        {
+            weapon.ReloadAmmo(weapon.MaxAmmo);
+        }
     }
 
-    public void RemoveWeapon(Weapon weapon)
-    {
-        Weapons.Remove(weapon);
-    }
+    //public void RemoveWeapon(Weapon weapon)
+    //{
+    //    Weapons.Remove(weapon);
+    //}
 
-    public bool HasWeapon(Weapon weapon)
-    {
-        return Weapons.Contains(weapon);
-    }
+    //public bool HasWeapon(Weapon weapon)
+    //{
+    //    return Weapons.Contains(weapon);
+    //}
 
     public bool HasWeaponWithIndex(int weaponIndex)
     {
