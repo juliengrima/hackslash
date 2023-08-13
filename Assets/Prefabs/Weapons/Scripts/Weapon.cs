@@ -12,7 +12,8 @@ public class Weapon : MonoBehaviour
 
     private int currentAmmo; // Munitions actuelles
 
-    public int WeaponIndex { get => _weaponIndex; set => _weaponIndex = value; }
+    public int WeaponIndex { get => _weaponIndex; }
+    public int MaxAmmo { get => _maxAmmo; }
 
     #endregion
     #region Unity LifeCycle

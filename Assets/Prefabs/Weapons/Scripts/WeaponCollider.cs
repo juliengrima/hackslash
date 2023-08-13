@@ -21,26 +21,10 @@ public class WeaponCollider : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             var weapon = gameObject.GetComponentInParent<Weapon>();
-            var weapons = _gameObject.GetComponent<inventory>();
+            var weaponsInventory = _gameObject.GetComponent<Inventory>();
 
-            //IList list = weapons.Weapons;
-            for (int i = 0; i < weapons.Weapons.Count; i++)
-            {
-                int weaponsIndex = weapons.Weapons.Count;
-                if (weapons.Weapons[weaponsIndex])
-                {
-                    if (weaponsIndex == weapon.GetWeaponIndex())
-                    {
-                        weapon.ReloadAmmo(_maxAmmo);
-                        _onPicked.Invoke();
-                    }
-                    else
-                    {
-                        weapons.AddWeapon(weapon);
-                        _onPicked.Invoke();
-                    }
-                } 
-            } 
+            weaponsInventory.AddWeapon(weapon);
+            _onPicked.Invoke();                
         }
     }
     #endregion

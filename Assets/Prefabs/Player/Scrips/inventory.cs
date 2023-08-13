@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class inventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     #region Champs
     
@@ -13,6 +13,13 @@ public class inventory : MonoBehaviour
 
     public List<Weapon> Weapons { get => weapons; set => weapons = value; }
     public List<Key> Keys { get => keys; set => keys = value; }
+
+    private int selectedWeaponIndex = 0; // Index de l'arme actuellement sélectionnée
+    public int SelectedWeaponIndex
+    {
+        get => selectedWeaponIndex;
+        set => selectedWeaponIndex = Mathf.Clamp(value, 0, Weapons.Count - 1);
+    }
 
     #endregion
     #region Unity LifeCycle
@@ -31,17 +38,21 @@ public class inventory : MonoBehaviour
         {
             Weapons.Add(weapon);
         }
+        else
+        {
+            weapon.ReloadAmmo(weapon.MaxAmmo);
+        }
     }
 
-    public void RemoveWeapon(Weapon weapon)
-    {
-        Weapons.Remove(weapon);
-    }
+    //public void RemoveWeapon(Weapon weapon)
+    //{
+    //    Weapons.Remove(weapon);
+    //}
 
-    public bool HasWeapon(Weapon weapon)
-    {
-        return Weapons.Contains(weapon);
-    }
+    //public bool HasWeapon(Weapon weapon)
+    //{
+    //    return Weapons.Contains(weapon);
+    //}
 
     public bool HasWeaponWithIndex(int weaponIndex)
     {
