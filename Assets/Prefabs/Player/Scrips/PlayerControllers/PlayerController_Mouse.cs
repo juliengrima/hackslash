@@ -13,7 +13,7 @@ public class PlayerController_Mouse : MonoBehaviour
     [Header("Componenents")]
     [SerializeField] Rigidbody2D _rb; // Appel du RigidBody du GameObject
     [SerializeField] Inventory _inventory; // Référence au script Inventory
-    [SerializeField] GameObject _player;
+    [SerializeField] Transform _weaponSpawner;
 
     private int selectedWeaponIndex = 0; // Index de l'arme sélectionnée
     //bool _isButtonPressed = _keys.action.IsPressed();
@@ -58,7 +58,8 @@ public class PlayerController_Mouse : MonoBehaviour
             if (selectedWeaponIndex >= _inventory.Weapons.Count)
             {
                 selectedWeaponIndex = 0;
-                _player.transform.SetParent(transform);
+                //_player.transform.SetParent(transform);  INSTANCIATE GAMEOBJET VIDE
+                Instantiate(_inventory.Weapons[selectedWeaponIndex], _weaponSpawner.position, Quaternion.identity);
             }
         }
         else if (selection.y < 0)
@@ -67,7 +68,8 @@ public class PlayerController_Mouse : MonoBehaviour
             if (selectedWeaponIndex < 0)
             {
                 selectedWeaponIndex = _inventory.Weapons.Count - 1;
-                _player.transform.SetParent(transform);
+                //_player.transform.SetParent(transform);  INSTANCIATE GAMEOBJET VIDE
+                Instantiate(_inventory.Weapons[selectedWeaponIndex], _weaponSpawner.position, Quaternion.identity);
             }
         }
 
