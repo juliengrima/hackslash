@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerLight : MonoBehaviour
 {
-
-
     //quand enemy rentre dans le collider 
     //public void OnTriggerEnter2D(Collider2D collision)
     //{
