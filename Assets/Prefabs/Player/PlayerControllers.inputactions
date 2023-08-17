@@ -34,18 +34,73 @@
                 },
                 {
                     "name": " inventory",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "a5b6a508-dd93-4158-b77a-ab5902ad9d92",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
+                    "name": "UpDownLeftRight",
                     "id": "cf203622-b031-436e-8a63-c4e0c0ca2bab",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "82ddf236-222e-4e7c-b0a9-7aabca78cc13",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "5edc7335-eee7-4755-bed1-a1cc33fccc08",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "a1f6b5c2-adee-48e0-9f54-4ced2f53da18",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "51aeb0bf-b138-4ec2-a047-d9268c2b9966",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "WASD",
+                    "id": "9cb0137a-17ac-43f5-8bb5-ae3fbf658a9c",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -110,61 +165,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "9cb0137a-17ac-43f5-8bb5-ae3fbf658a9c",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "82ddf236-222e-4e7c-b0a9-7aabca78cc13",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "5edc7335-eee7-4755-bed1-a1cc33fccc08",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "a1f6b5c2-adee-48e0-9f54-4ced2f53da18",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "51aeb0bf-b138-4ec2-a047-d9268c2b9966",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "086cce10-0764-4440-b7b5-0b6e36cfec46",
                     "path": "<AndroidGamepad>/leftStick",
@@ -199,19 +199,8 @@
                 },
                 {
                     "name": "",
-                    "id": "ed015ae4-8ffa-412c-b912-dd8472d215b2",
-                    "path": "<Mouse>/forwardButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": " inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "409f23e7-c9fd-48d6-9c08-ca3739b9162a",
-                    "path": "<Mouse>/backButton",
+                    "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

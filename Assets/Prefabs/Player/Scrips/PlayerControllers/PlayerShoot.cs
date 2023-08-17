@@ -16,6 +16,7 @@ public class PlayerShoot : MonoBehaviour
     [Header("Fields")]
 
     Weapon weapon; // Référence au script Weapon
+    private int selected;
     #endregion
     #region Unity LifeCycle
     private void Start()
@@ -26,7 +27,8 @@ public class PlayerShoot : MonoBehaviour
     #region Methods
     void Armed()
     {
-        if (_nextWeapon)
+        int nextweapon = _nextWeapon.GetNextWeapon();
+        if (nextweapon > 0)
         {
             _shoot.action.started += weapon.ShootStart;
             _shoot.action.canceled += weapon.ShootStop;

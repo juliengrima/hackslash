@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] InputActionReference _move;
+    //[SerializeField] InputActionReference _keys;
 
     [SerializeField] float _speed;
 
@@ -31,4 +32,9 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = _move.action.ReadValue<Vector2>();
         _rb.velocity = direction * _speed;
     }
+
+    //void GetNextWeaponByKey(InputAction.CallbackContext obj)
+    //{
+    //    throw new NotImplementedException();
+    //}
 }

@@ -8,7 +8,6 @@ public class PlayerController_Mouse : MonoBehaviour
 {
     [Header("Inputs")]
     [SerializeField] InputActionReference _mouseWheel;
-    [SerializeField] InputActionReference _keys;
     [SerializeField] InputActionReference _look;
     [Header("Componenents")]
     [SerializeField] Rigidbody2D _rb; // Appel du RigidBody du GameObject
@@ -36,20 +35,21 @@ public class PlayerController_Mouse : MonoBehaviour
         Vector2 direction = _look.action.ReadValue<Vector2>();
         // Récupérer la position de la souris dans l'espace de jeu
         direction = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //// Calculer la direction vers la position de la souris
+        // Calculer la direction vers la position de la souris
         Vector2 lookDirection = direction - _rb.position;
 
-        //// Calculer l'angle de rotation en radians
+        // Calculer l'angle de rotation en radians
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        //// Créer une nouvelle rotation en utilisant l'angle calculé
+        // Créer une nouvelle rotation en utilisant l'angle calculé
         Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         // Appliquer la rotation au RigidBody
         _rb.MoveRotation(rotation);
     }
 
-    private void GetNextWeapon()
+    public int GetNextWeapon()
     {
         //throw new NotImplementedException();
+        //bool selection = _mouseWheel.action.IsPressed();
         Vector2 selection = _mouseWheel.action.ReadValue<Vector2>();
         // Gérer le changement d'arme en fonction du défilement de la molette
         if (selection.y > 0)
@@ -57,9 +57,9 @@ public class PlayerController_Mouse : MonoBehaviour
             selectedWeaponIndex++;
             if (selectedWeaponIndex >= _inventory.Weapons.Count)
             {
-                selectedWeaponIndex = 0;
+                //selectedWeaponIndex = 0;
                 //_player.transform.SetParent(transform);  INSTANCIATE GAMEOBJET VIDE
-                Instantiate(_inventory.Weapons[selectedWeaponIndex], _weaponSpawner.position, Quaternion.identity);
+                Instantiate(_inventory.Weapons[selectedWeaponIndex], _weaponSpawner.position, Quaternion.identity);  
             }
         }
         else if (selection.y < 0)
@@ -69,11 +69,12 @@ public class PlayerController_Mouse : MonoBehaviour
             {
                 selectedWeaponIndex = _inventory.Weapons.Count - 1;
                 //_player.transform.SetParent(transform);  INSTANCIATE GAMEOBJET VIDE
-                Instantiate(_inventory.Weapons[selectedWeaponIndex], _weaponSpawner.position, Quaternion.identity);
+                Instantiate(_inventory.Weapons[selectedWeaponIndex], _weaponSpawner.position, Quaternion.identity);   
             }
         }
-
         // Mettre à jour l'arme actuellement sélectionnée dans l'inventaire
         _inventory.SelectedWeaponIndex = selectedWeaponIndex;
-    }
+
+        return _inventory.SelectedWeaponIndex;
+    } 
 }
