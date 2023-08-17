@@ -49,10 +49,10 @@ public class Inventory : MonoBehaviour
     //    Weapons.Remove(weapon);
     //}
 
-    //public bool HasWeapon(Weapon weapon)
-    //{
-    //    return Weapons.Contains(weapon);
-    //}
+    public bool HasWeapon(Weapon weapon)
+    {
+        return Weapons.Contains(weapon);
+    }
 
     public bool HasWeaponWithIndex(int weaponIndex)
     {

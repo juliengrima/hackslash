@@ -21,7 +21,7 @@ public class WeaponCollider : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             var weapon = gameObject.GetComponentInParent<Weapon>();
-            var weaponsInventory = _gameObject.GetComponent<Inventory>();
+            Inventory weaponsInventory = _gameObject.GetComponentInChildren<Inventory>();
 
             weaponsInventory.AddWeapon(weapon);
             _onPicked.Invoke();                
